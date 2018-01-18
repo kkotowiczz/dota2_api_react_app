@@ -4,17 +4,21 @@ class Heroes extends Component {
     state = {
         heroesList: []
     };
-    boundFunc = () => {
+    componentDidMount() {
         const REQ_URL = `https://api.opendota.com`;
         const REQ_OPTIONS = {
             method: "GET",
             mode: "cors"
         };
         fetch(`${REQ_URL}/api/heroStats`, REQ_OPTIONS).then(res => res.json()).then(data => {
+            console.log(data);
             this.setState((prevState, props) => {
                 return {
                     heroesList: data
                 }
+            });
+            data.map(hero => {
+                fetch(`${REQ_URL}/api/heroes/${hero.id}/matches`, REQ_OPTIONS).then(res => res.json()).then(heroMatches => console.log(heroMatches))
             })
         })
     };
@@ -27,11 +31,11 @@ class Heroes extends Component {
                             <HeroCard
                                 key={hero.id}
                                 avatarURL={`https://api.opendota.com${hero.img}`}
+                                name={hero.localized_name}
                             />
                         )
                     })
                 }
-                <button onClick={this.boundFunc}>klik </button>
             </div>
         )
     }

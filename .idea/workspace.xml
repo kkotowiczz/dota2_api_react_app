@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c0afc3e-91c2-4fea-8416-4a4f79e038d7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.js" afterPath="$PROJECT_DIR$/src/app/App.js" />
       <change beforePath="$PROJECT_DIR$/src/app/components/HeroCard.js" afterPath="$PROJECT_DIR$/src/app/components/HeroCard.js" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Heroes.js" afterPath="$PROJECT_DIR$/src/app/components/Heroes.js" />
     </list>
@@ -84,11 +82,12 @@
       <file leaf-file-name="Heroes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/components/Heroes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+            <state relative-caret-position="340">
+              <caret line="20" column="112" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <marker date="1516308588391" expanded="true" signature="624:1078" ph="..." />
+                <marker date="1516310623674" expanded="true" signature="853:1302" ph="..." />
+                <marker date="1516310623674" expanded="true" signature="999:1216" ph="..." />
               </folding>
             </state>
           </provider>
@@ -107,8 +106,8 @@
       <file leaf-file-name="HeroCard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/HeroCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <state relative-caret-position="153">
+              <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -153,8 +152,8 @@
         <option value="$PROJECT_DIR$/src/app/components/HomePage.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/src/app/components/HeroesCard.js" />
-        <option value="$PROJECT_DIR$/src/app/components/HeroCard.js" />
         <option value="$PROJECT_DIR$/src/app/App.js" />
+        <option value="$PROJECT_DIR$/src/app/components/HeroCard.js" />
         <option value="$PROJECT_DIR$/src/app/components/Heroes.js" />
       </list>
     </option>
@@ -272,12 +271,12 @@
       <updated>1516135613782</updated>
       <workItem from="1516135615597" duration="2979000" />
       <workItem from="1516209384477" duration="5039000" />
-      <workItem from="1516298759835" duration="9649000" />
+      <workItem from="1516298759835" duration="11835000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17667000" />
+    <option name="totallyTimeSpent" value="19853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="99" width="1922" height="1053" extended-state="6" />
@@ -512,14 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -544,14 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/HomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -562,21 +545,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/HomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/HeroCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="153">
+          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/Heroes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        <state relative-caret-position="340">
+          <caret line="20" column="112" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="22" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1516308588391" expanded="true" signature="624:1078" ph="..." />
+            <marker date="1516310623674" expanded="true" signature="853:1302" ph="..." />
+            <marker date="1516310623674" expanded="true" signature="999:1216" ph="..." />
           </folding>
         </state>
       </provider>

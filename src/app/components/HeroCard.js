@@ -5,7 +5,10 @@ const HeroCard = props => {
     return (
       <div>
         <div className='heroAvatar'>
-            <img src={props.avatarURL} />
+            <figure>
+            <img src={props.avatarURL} className="avatarImg" />
+            <figcaption>{props.name}</figcaption>
+            </figure>
         </div>
       </div>
     );
