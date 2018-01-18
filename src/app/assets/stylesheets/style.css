@@ -1,4 +1,10 @@
-a {
-    color: red;
-    font-size: 30px;
+body {
+    margin: 0;
+}
+#nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 10%;
+
 }
