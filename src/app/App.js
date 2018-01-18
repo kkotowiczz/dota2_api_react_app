@@ -7,11 +7,9 @@ import Heroes from './components/Heroes'
 const App = () => {
     return (
         <div>
-            <Navbar
-                prop1='wiem'
-            />
+            {/*<Navbar*/}
+            {/*/>*/}
             <Heroes
-                wiem='wiem'
             />
         </div>
 
