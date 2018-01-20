@@ -12,11 +12,11 @@ const config = {
         path: BUILD_DIR,
         filename: 'bundle.js'
     },
+    devtool: 'cheap-eval-source-map',
     devServer: {
         contentBase: APP_DIR
     },
     module: {
-
         rules: [
             {
                 test: /\.css$/,
@@ -28,6 +28,17 @@ const config = {
                 include: APP_DIR,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.(png|jp(e*)g|svg)$/,
+                include: `${APP_DIR}/assets/images`,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8000, // Convert images < 8kb to base64 strings
+                        name: 'images/[hash]-[name].[ext]'
+                    }
+                }]
             }
         ]
     },

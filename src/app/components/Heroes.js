@@ -2,7 +2,12 @@ import React, {Component} from 'react';
 import HeroCard from './HeroCard'
 class Heroes extends Component {
     state = {
-        heroesList: []
+        heroesList: [],
+        stats: {
+            str: [],
+            agi: [],
+            int: []
+        }
     };
     componentDidMount() {
         const REQ_URL = `https://api.opendota.com`;
@@ -13,12 +18,10 @@ class Heroes extends Component {
         fetch(`${REQ_URL}/api/heroStats`, REQ_OPTIONS).then(res => res.json()).then(data => {
             console.log(data);
             this.setState((prevState, props) => {
-                return {
-                    heroesList: data
-                }
+                return {heroesList: data}
             });
             data.map(hero => {
-                fetch(`${REQ_URL}/api/heroes/${hero.id}/matches`, REQ_OPTIONS).then(res => res.json()).then(heroMatches => console.log(heroMatches))
+                console.log(hero)
             })
         })
     };
@@ -32,6 +35,9 @@ class Heroes extends Component {
                                 key={hero.id}
                                 avatarURL={`https://api.opendota.com${hero.img}`}
                                 name={hero.localized_name}
+                                str = {hero.base_str}
+                                agi = {hero.base_agi}
+                                int = {hero.base_int}
                             />
                         )
                     })
@@ -42,3 +48,5 @@ class Heroes extends Component {
 }
 
 export default Heroes;
+
+//fetch(`${REQ_URL}/api/heroes/${hero.id}/matches`, REQ_OPTIONS).then(res => res.json()).then(heroMatches => console.log(heroMatches))
