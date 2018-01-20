@@ -27,4 +27,4 @@ cmake-build-release/
 *.iws
 node_modules/
 package-lock.json
-/client/public/
+/src/client/public/
