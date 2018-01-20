@@ -22,7 +22,7 @@ class Heroes extends Component {
     };
     render() {
         return(
-            <div>
+            <div id="heroesWrapper">
                 {
                     this.state.heroesList.map(hero => {
                         return (

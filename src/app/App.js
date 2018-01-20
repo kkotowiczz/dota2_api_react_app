@@ -6,9 +6,9 @@ import Heroes from './components/Heroes'
 
 const App = () => {
     return (
-        <div>
-            {/*<Navbar*/}
-            {/*/>*/}
+        <div id="appWrapper">
+            <Navbar
+            />
             <Heroes
             />
         </div>
