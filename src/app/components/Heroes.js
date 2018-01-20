@@ -3,11 +3,6 @@ import HeroCard from './HeroCard'
 class Heroes extends Component {
     state = {
         heroesList: [],
-        stats: {
-            str: [],
-            agi: [],
-            int: []
-        }
     };
     componentDidMount() {
         const REQ_URL = `https://api.opendota.com`;
@@ -21,7 +16,7 @@ class Heroes extends Component {
                 return {heroesList: data}
             });
             data.map(hero => {
-                console.log(hero)
+
             })
         })
     };
@@ -32,12 +27,13 @@ class Heroes extends Component {
                     this.state.heroesList.map(hero => {
                         return (
                             <HeroCard
-                                key={hero.id}
-                                avatarURL={`https://api.opendota.com${hero.img}`}
-                                name={hero.localized_name}
+                                key = {hero.id}
+                                avatarURL = {`https://api.opendota.com${hero.img}`}
+                                name = {hero.localized_name}
                                 str = {hero.base_str}
                                 agi = {hero.base_agi}
                                 int = {hero.base_int}
+                                mainAttr = {hero.primary_attr}
                             />
                         )
                     })
