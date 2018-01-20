@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Navbar from './components/Navbar'
 import Heroes from './components/Heroes'
+import CountryStats from './components/CountryStats'
 
 
 const App = () => {
@@ -9,8 +10,7 @@ const App = () => {
         <div id="appWrapper">
             <Navbar
             />
-            <Heroes
-            />
+            <CountryStats />
         </div>
 
     )

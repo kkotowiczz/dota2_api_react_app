@@ -26,5 +26,5 @@ cmake-build-release/
 ## File-based project format:
 *.iws
 node_modules/
-
+package-lock.json
 /client/public/
