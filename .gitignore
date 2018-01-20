@@ -1,3 +1,7 @@
+node_modules/
+package-lock.json
+/src/client/public/bundle.js
+
 # User-specific stuff:
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -25,6 +29,3 @@ cmake-build-release/
 
 ## File-based project format:
 *.iws
-node_modules/
-package-lock.json
-/src/client/public/
