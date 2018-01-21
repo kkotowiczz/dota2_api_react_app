@@ -11,6 +11,7 @@ const App = () => {
             <Navbar
             />
             <CountryStats />
+            {/*<Heroes />*/}
         </div>
 
     )
