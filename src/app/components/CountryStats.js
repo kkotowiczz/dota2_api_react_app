@@ -1,7 +1,7 @@
 // https://api.opendota.com/api/distributions / country_mmr
 
 import React, {Component} from "react";
-import * as d3 from 'd3';
+import Chart from './Chart'
 
 class CountryStats extends Component {
     state = {
@@ -26,7 +26,7 @@ class CountryStats extends Component {
 
     }
     componentDidUpdate() {
-        d3.select("#chart1").selectAll("p").data(this.state.countriesList.country_mmr.rows).enter().append("p").text((d, i) => JSON.stringify(d, undefined, 2))
+
     }
     createChart = () => {
 
@@ -36,7 +36,9 @@ class CountryStats extends Component {
         return (
             <div>
                 <div id="chart1">
-
+                    <Chart
+                        data={this.state.countriesList}
+                    />
                 </div>
             </div>
         )
