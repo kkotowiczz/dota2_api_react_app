@@ -39,6 +39,10 @@ const config = {
                         name: 'images/[hash]-[name].[ext]'
                     }
                 }]
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
             }
         ]
     },

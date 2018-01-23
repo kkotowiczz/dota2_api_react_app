@@ -36,8 +36,9 @@ class CountryStats extends Component {
         return (
             <div>
                 <div id="chart1">
-                    <Chart
+                    <Chart id="innerChart"
                         data={this.state.countriesList}
+                           fill={""}
                     />
                 </div>
             </div>

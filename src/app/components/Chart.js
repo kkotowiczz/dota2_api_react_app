@@ -1,33 +1,38 @@
-import React, {Component} from 'react';
-import {GoogleCharts} from 'google-charts'
-import ReactDOM from 'react-dom'
+import React, {Component} from "react";
+import * as d3 from 'd3'
+import * as topoJSON from 'topojson'
 
 class Chart extends Component {
+    createChart () {
+        let width = 900;
+        let height = 600;
 
-    componentDidUpdate(prevProps) {
-        if(this.props.data !== prevProps) {
-            console.log(this.props.data.country_mmr.rows);
-            GoogleCharts.load(this.drawChart)
-        }
+        let projection = d3.geoMercator();
 
+        let svg = d3.select("#svgContainer").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+        let path = d3.geoPath()
+            .projection(projection);
+        let g = svg.append("g");
+
+        d3.json("https://unpkg.com/world-atlas@1.1.4/world/110m.json", (error, topology) => {
+            g.selectAll("path")
+                .data(topoJSON.feature(topology, topology.objects.countries)
+                    .geometries)
+                .enter()
+                .append("path")
+                .attr("d", path)
+        });
     }
-    drawChart = () => {
-        const geoChartOptions = {
-            region: 'world',
-            resolution: 'countries',
-        };
+    componentDidMount() {
+        this.createChart()
+    }
 
-        const geoChartData =  GoogleCharts.api.visualization.arrayToDataTable([
-            ['Country', 'Average MMR', 'Players count'],
-            ["PL", 10, 100],
-            ["US", 200, 300]
-        ]);
-        const geoChart = new GoogleCharts.api.visualization.GeoChart(document.getElementsByTagName('body')[0]);
-        geoChart.draw(geoChartData, geoChartOptions)
-    };
     render() {
         return (
-            <div id="chart">s</div>
+            <div id="svgContainer">
+            </div>
         )
     }
 }
