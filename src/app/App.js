@@ -8,8 +8,8 @@ import CountryStats from './components/CountryStats'
 const App = () => {
     return (
         <div id="appWrapper">
-            <Navbar
-            />
+            {/*<Navbar*/}
+            {/*/>*/}
             <CountryStats />
             {/*<Heroes />*/}
         </div>

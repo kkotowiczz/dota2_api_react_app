@@ -19,7 +19,7 @@ class Chart extends Component {
         d3.json("https://unpkg.com/world-atlas@1.1.4/world/110m.json", (error, topology) => {
             g.selectAll("path")
                 .data(topoJSON.feature(topology, topology.objects.countries)
-                    .geometries)
+                    .features)
                 .enter()
                 .append("path")
                 .attr("d", path)
