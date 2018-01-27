@@ -7,19 +7,14 @@ const HeroCard = props => {
         method: "GET",
         mode: "cors"
     };
-    let heroDataContainer = [];
+
     const handleClick = () => {
-       return fetch(`${REQ_URL}/api/heroes/${props.id}/matches`, REQ_OPTIONS)
+        fetch(`${REQ_URL}/api/heroes/${props.id}/matches`, REQ_OPTIONS)
             .then(res => res.json())
             .then(heroMatches => {
-                heroMatches.map(hero => {
-                    heroDataContainer.push({
-                        kills: hero.kills,
-                        deaths: hero.deaths,
-                        assists: hero.assists
-                    })
-                })
-                console.log(heroDataContainer)
+                const heroData = heroMatches.map(match => ({kills: match.kills, deaths: match.deaths, assists: match.assists}))
+                    .reduce((acc, val) => ({kills: acc.kills + val.kills, deaths: acc.deaths + val.deaths, assists: acc.assists + val.assists}))
+                console.log(heroData)
             })
     };
 
