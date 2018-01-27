@@ -28,6 +28,7 @@ body {
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 256px;
+    margin: 25px;
 }
 .avatarImg{
     min-width: 100%;

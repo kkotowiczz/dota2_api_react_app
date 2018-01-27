@@ -20,6 +20,8 @@ class Heroes extends Component {
             })
         })
     };
+
+
     render() {
         return(
             <div id="heroesWrapper">
@@ -28,6 +30,7 @@ class Heroes extends Component {
                         return (
                             <HeroCard
                                 key = {hero.id}
+                                id = {hero.id}
                                 avatarURL = {`https://api.opendota.com${hero.img}`}
                                 name = {hero.localized_name}
                                 str = {hero.base_str}
@@ -45,4 +48,3 @@ class Heroes extends Component {
 
 export default Heroes;
 
-//fetch(`${REQ_URL}/api/heroes/${hero.id}/matches`, REQ_OPTIONS).then(res => res.json()).then(heroMatches => console.log(heroMatches))

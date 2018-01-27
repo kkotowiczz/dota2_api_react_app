@@ -2,9 +2,30 @@ import React from 'react';
 
 
 const HeroCard = props => {
+    const REQ_URL = `https://api.opendota.com`;
+    const REQ_OPTIONS = {
+        method: "GET",
+        mode: "cors"
+    };
+    let heroDataContainer = [];
+    const handleClick = () => {
+       return fetch(`${REQ_URL}/api/heroes/${props.id}/matches`, REQ_OPTIONS)
+            .then(res => res.json())
+            .then(heroMatches => {
+                heroMatches.map(hero => {
+                    heroDataContainer.push({
+                        kills: hero.kills,
+                        deaths: hero.deaths,
+                        assists: hero.assists
+                    })
+                })
+                console.log(heroDataContainer)
+            })
+    };
+
     return (
-      <div className='heroCard'>
-          <div className="heroCardWrapper">
+      <div className='heroCard' >
+          <div className="heroCardWrapper" onClick={handleClick}>
               <img src={props.avatarURL} className="avatarImg" />
               <figcaption>{props.name}</figcaption>
               <div className='attributesRow'>

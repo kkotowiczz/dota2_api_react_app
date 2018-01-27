@@ -15,7 +15,6 @@ class CountryStats extends Component {
             mode: "cors"
         };
         fetch(REQ_URL, REQ_OPT).then(res => res.json()).then(countriesData => {
-            console.log(countriesData);
             this.setState(() => {
                 return {countriesList: countriesData}
             });
@@ -38,7 +37,6 @@ class CountryStats extends Component {
                 <div id="chart1">
                     <Chart id="innerChart"
                         data={this.state.countriesList}
-                           fill={""}
                     />
                 </div>
             </div>
