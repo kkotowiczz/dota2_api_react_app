@@ -8,8 +8,7 @@ import CountryStats from './components/CountryStats'
 const App = () => {
     return (
         <div id="appWrapper">
-            <Navbar
-            />
+            <Navbar/>
             {/*<CountryStats />*/}
             <Heroes />
         </div>
@@ -17,4 +16,4 @@ const App = () => {
     )
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));

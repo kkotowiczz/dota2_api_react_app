@@ -19,14 +19,25 @@ class HeroCard extends Component {
                     .reduce((acc, val) => ({kills: acc.kills + val.kills, deaths: acc.deaths + val.deaths, assists: acc.assists + val.assists}))
             })
             .then(res => console.log(res, this.props.id, this.props.name))
+
+        this.setState((prevProps, props) => {
+            return {isCardFlipped: !this.state.isCardFlipped}
+        })
     };
     render() {
         return (
             <div className='heroCard'>
                 <div className="heroCardWrapper" onClick={this.handleClick}>
-                    <CardFront
-                        {...this.props}
-                    />
+                    {
+                        this.state.isCardFlipped ?
+                            <CardBack/>
+                            :
+                            <CardFront
+                                {...this.props}
+                            />
+
+                    }
+
                 </div>
             </div>
         );
