@@ -5,6 +5,7 @@ import CardBack from './CardBack'
 class HeroCard extends Component {
     state = {
         isCardFlipped: false,
+        kdaStats: {}
     };
     handleClick = () =>  {
         const REQ_URL = `https://api.opendota.com`;
@@ -18,28 +19,33 @@ class HeroCard extends Component {
                 return heroMatches.map(match => ({kills: match.kills, deaths: match.deaths, assists: match.assists}))
                     .reduce((acc, val) => ({kills: acc.kills + val.kills, deaths: acc.deaths + val.deaths, assists: acc.assists + val.assists}))
             })
-            .then(res => console.log(res, this.props.id, this.props.name))
-
-        this.setState((prevProps, props) => {
-            return {isCardFlipped: !this.state.isCardFlipped}
-        })
+            .then(res => {
+                this.setState((prevProps, props) => {
+                    return {
+                        isCardFlipped: !this.state.isCardFlipped,
+                        kdaStats: {res}
+                    }
+                })
+            }).then(s => console.log(this.state.kdaStats))
     };
     render() {
         return (
-            <div className='heroCard'>
-                <div className="heroCardWrapper" onClick={this.handleClick}>
+            <div className='heroCard' onClick={this.handleClick}>
                     {
                         this.state.isCardFlipped ?
-                            <CardBack/>
+                            <CardBack
+                                // kills={this.state.kdaStats.res.kills}
+                                // deaths={this.state.kdaStats.res.deaths}
+                                // assists={this.state.kdaStats.res.assists}
+                                stats={this.state.kdaStats.res}
+                            />
                             :
                             <CardFront
                                 {...this.props}
                             />
-
                     }
 
                 </div>
-            </div>
         );
     }
 };
