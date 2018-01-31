@@ -34,9 +34,6 @@ class HeroCard extends Component {
                     {
                         this.state.isCardFlipped ?
                             <CardBack
-                                // kills={this.state.kdaStats.res.kills}
-                                // deaths={this.state.kdaStats.res.deaths}
-                                // assists={this.state.kdaStats.res.assists}
                                 stats={this.state.kdaStats.res}
                             />
                             :
