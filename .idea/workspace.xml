@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c0afc3e-91c2-4fea-8416-4a4f79e038d7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/assets/stylesheets/style.css" afterPath="$PROJECT_DIR$/src/app/assets/stylesheets/style.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Heroes.js" afterPath="$PROJECT_DIR$/src/app/components/Heroes.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,24 +20,9 @@
       <file leaf-file-name="CountryStats.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/CountryStats.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
+            <state relative-caret-position="629">
               <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chart.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/components/Chart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-              <folding>
-                <marker date="1517340916969" expanded="true" signature="1435:2036" ph="..." />
-                <marker date="1517340916969" expanded="true" signature="1477:1955" ph="..." />
-                <marker date="1517340916969" expanded="true" signature="1594:1885" ph="..." />
-                <marker date="1517340916969" expanded="true" signature="1995:2017" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -55,18 +40,26 @@
       <file leaf-file-name="Heroes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/Heroes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="39" column="55" lean-forward="false" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+            <state relative-caret-position="595">
+              <caret line="37" column="58" lean-forward="false" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
               <folding>
-                <marker date="1517430329585" expanded="true" signature="737:2127" ph="..." />
-                <marker date="1517430329585" expanded="true" signature="751:1321" ph="..." />
-                <marker date="1517430329585" expanded="true" signature="1546:2041" ph="..." />
+                <marker date="1517516968160" expanded="true" signature="767:2224" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Checkbox.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/components/Checkbox.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="144" lean-forward="true" selection-start-line="10" selection-start-column="144" selection-end-line="10" selection-end-column="144" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/assets/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="578">
@@ -79,8 +72,8 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            <state relative-caret-position="238">
+              <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -91,12 +84,12 @@
       <file leaf-file-name="HeroCard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/HeroCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="561">
               <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <marker date="1517423537406" expanded="true" signature="1236:1637" ph="..." />
-                <marker date="1517423537406" expanded="true" signature="1237:1636" ph="..." />
+                <marker date="1517509738113" expanded="true" signature="1236:1637" ph="..." />
+                <marker date="1517509738113" expanded="true" signature="1237:1636" ph="..." />
               </folding>
             </state>
           </provider>
@@ -115,8 +108,8 @@
       <file leaf-file-name="CardBack.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/components/CardBack.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="95" lean-forward="false" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
+            <state relative-caret-position="238">
+              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -175,8 +168,9 @@
         <option value="$PROJECT_DIR$/src/app/components/CardFront.js" />
         <option value="$PROJECT_DIR$/src/app/components/HeroCard.js" />
         <option value="$PROJECT_DIR$/src/app/components/CardBack.js" />
-        <option value="$PROJECT_DIR$/src/app/components/Heroes.js" />
         <option value="$PROJECT_DIR$/src/app/assets/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/src/app/components/Heroes.js" />
+        <option value="$PROJECT_DIR$/src/app/components/Checkbox.js" />
       </list>
     </option>
   </component>
@@ -214,7 +208,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -259,6 +252,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -323,11 +317,12 @@
       <workItem from="1517260448474" duration="1000" />
       <workItem from="1517337728987" duration="8261000" />
       <workItem from="1517423475078" duration="5838000" />
+      <workItem from="1517513641968" duration="3704000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119883000" />
+    <option name="totallyTimeSpent" value="124528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="99" width="1922" height="1053" extended-state="6" />
@@ -386,13 +381,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/Heroes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -651,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,31 +662,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/CountryStats.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
+        <state relative-caret-position="629">
           <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/Heroes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="39" column="55" lean-forward="false" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
-          <folding>
-            <marker date="1517430329585" expanded="true" signature="737:2127" ph="..." />
-            <marker date="1517430329585" expanded="true" signature="751:1321" ph="..." />
-            <marker date="1517430329585" expanded="true" signature="1546:2041" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -713,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/CardBack.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="95" lean-forward="false" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
+        <state relative-caret-position="238">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -731,20 +698,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/HeroCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
+        <state relative-caret-position="561">
           <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1517423537406" expanded="true" signature="1236:1637" ph="..." />
-            <marker date="1517423537406" expanded="true" signature="1237:1636" ph="..." />
+            <marker date="1517509738113" expanded="true" signature="1236:1637" ph="..." />
+            <marker date="1517509738113" expanded="true" signature="1237:1636" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="238">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -755,6 +722,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/Heroes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="37" column="58" lean-forward="false" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+          <folding>
+            <marker date="1517516968160" expanded="true" signature="767:2224" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/Checkbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="144" lean-forward="true" selection-start-line="10" selection-start-column="144" selection-end-line="10" selection-end-column="144" />
           <folding />
         </state>
       </provider>

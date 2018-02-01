@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import HeroCard from './HeroCard'
+import HeroCard from './HeroCard';
+import Checkbox from './Checkbox';
+
 class Heroes extends Component {
     state = {
         heroesList: [],
+        attributes: ['str', 'agi', 'int']
     };
     componentDidMount() {
         const REQ_URL = `https://api.opendota.com`;
@@ -20,18 +23,20 @@ class Heroes extends Component {
             })
         })
     };
+
     render() {
-        const attributes = ['str', 'agi', 'int'];
         return(
             <div id="heroesWrapper">
                 <div id="heroFilter">
                     <form id="attributeSelector">
                         {
-                            attributes.map(attribute => {
+                            this.state.attributes.map(attribute => {
                                 return (
                                     <label>
-                                        {attribute}
-                                        <input type="checkbox" name="attr" value={attribute} checked={true}/>
+                                        <Checkbox
+                                            attrName={attribute}
+                                            key={attribute}
+                                        />
                                     </label>
                                 )
                             })
