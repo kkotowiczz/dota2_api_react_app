@@ -23,24 +23,30 @@ class Heroes extends Component {
             })
         })
     };
-
+    clickHandler = e => {
+        this.setState(() => {
+            return {
+                
+            }
+        })
+    };
     render() {
+        const checkBoxes = this.state.attributes.map(attribute => {
+            return (
+                <label>
+                    <Checkbox
+                        attrName={attribute}
+                        key={attribute}
+                        clickHandler={this.clickHandler}
+                    />
+                </label>
+            )
+        });
         return(
             <div id="heroesWrapper">
                 <div id="heroFilter">
                     <form id="attributeSelector">
-                        {
-                            this.state.attributes.map(attribute => {
-                                return (
-                                    <label>
-                                        <Checkbox
-                                            attrName={attribute}
-                                            key={attribute}
-                                        />
-                                    </label>
-                                )
-                            })
-                        }
+                        {checkBoxes}
                     </form>
                     <input id="heroSearch" type="text"/>
                 </div>
