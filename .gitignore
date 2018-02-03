@@ -1,6 +1,6 @@
 node_modules/
 package-lock.json
-/src/client/public/bundle.js
+bundle.js
 
 
 # User-specific stuff:

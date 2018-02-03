@@ -27,7 +27,7 @@ body {
     display: flex;
     justify-content: space-around;
 }
-#attributeSelector, #heroSearch {
+#attributeSelector, #heroSearchWrapper {
     display: flex;
     width: 50%;
     margin: 15px;
@@ -37,7 +37,8 @@ body {
     flex-direction: row;
 }
 #heroSearch {
-    height: 50%;
+    height: 100%;
+    width: 100%;
 }
 
 .heroCard {

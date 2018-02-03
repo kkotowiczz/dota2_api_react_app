@@ -13,11 +13,12 @@ class Heroes extends Component {
     };
 
     clickHandler = e => {
+        const abbrAttr = e.target.value.substr(0, 3).toLowerCase();
         let filteredArray;
         if(!e.target.checked)
-            filteredArray = this.state.filteredAttributes.filter(attr => attr !== e.target.value);
+            filteredArray = this.state.filteredAttributes.filter(attr => attr !== abbrAttr);
         else
-            filteredArray = this.state.filteredAttributes.concat(e.target.value);
+            filteredArray = this.state.filteredAttributes.concat(abbrAttr);
         this.setState(() => {
             return {
                 filteredAttributes: filteredArray
@@ -57,7 +58,7 @@ class Heroes extends Component {
         })
     };
     render() {
-        const attrs = ['str', 'agi', 'int'];
+        const attrs = ['Strength', 'Agility', 'Intelligence'];
         const heroList = this.appendHeroList();
         const checkBoxes = attrs.map(attribute => {
             return (
@@ -76,7 +77,7 @@ class Heroes extends Component {
                     <form id="attributeSelector">
                         {checkBoxes}
                     </form>
-                    <input id="heroSearch" type="text"/>
+                    <SearchBar/>
                 </div>
                 {heroList}
             </div>

@@ -3,8 +3,8 @@ import React, {Component} from 'react'
 class SearchBar extends Component {
     render() {
         return (
-            <div>
-                s
+            <div id="heroSearchWrapper">
+                <input id="heroSearch" type="text"/>
             </div>
         )
     }
