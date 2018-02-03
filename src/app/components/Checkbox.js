@@ -8,7 +8,6 @@ class Checkbox extends Component {
         this.setState(() => {
             return {checked: !this.state.checked}
         });
-        console.log(e.target.checked, e.target.value, "from child")
     };
     render() {
         return (

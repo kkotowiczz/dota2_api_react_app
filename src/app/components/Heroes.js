@@ -6,12 +6,12 @@ import SearchBar from './SearchBar'
 class Heroes extends Component {
     state = {
         heroesList: [],
-        filteredAttributes: ['str', 'agi', 'int']
+        filteredAttributes: ['str', 'agi', 'int'],
+        searchedTerm: ''
     };
     componentDidMount() {
         this.fetchData();
     };
-
     clickHandler = e => {
         const abbrAttr = e.target.value.substr(0, 3).toLowerCase();
         let filteredArray;
@@ -25,6 +25,15 @@ class Heroes extends Component {
             }
         })
     };
+    searchBarChangeHandler = e => {
+      let searchTerm = e.target.value.trim();
+        if(searchTerm) {
+            this.setState(() => {
+                return {searchedTerm: searchTerm}
+            })
+        }
+    };
+
     fetchData = () => {
         const REQ_URL = `https://api.opendota.com`;
         const REQ_OPTIONS = {
@@ -40,7 +49,7 @@ class Heroes extends Component {
     appendHeroList = () => {
         return this.state.heroesList
             .map(hero => {
-                if(this.state.filteredAttributes.indexOf(hero.primary_attr) > -1) {
+                if(this.state.filteredAttributes.indexOf(hero.primary_attr) > -1 && hero.localized_name.indexOf(this.state.searchedTerm) > -1) {
                     return (
                         <HeroCard
                             key = {hero.id}
@@ -54,9 +63,8 @@ class Heroes extends Component {
                         />
                     )
                 }
-
-        })
-    };
+            })
+        };
     render() {
         const attrs = ['Strength', 'Agility', 'Intelligence'];
         const heroList = this.appendHeroList();
@@ -77,7 +85,9 @@ class Heroes extends Component {
                     <form id="attributeSelector">
                         {checkBoxes}
                     </form>
-                    <SearchBar/>
+                    <SearchBar
+                        searchBarChangeHandler={this.searchBarChangeHandler}
+                    />
                 </div>
                 {heroList}
             </div>
