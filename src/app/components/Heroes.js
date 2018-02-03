@@ -7,19 +7,16 @@ class Heroes extends Component {
         heroesList: [],
         filteredAttributes: ['str', 'agi', 'int']
     };
-
     componentDidMount() {
         this.fetchData();
     };
 
     clickHandler = e => {
-        console.log(e.nativeEvent.target.value, e.target.checked, 'from parent');
         let filteredArray;
-        if(!e.target.checked) {
-            filteredArray = this.state.filteredAttributes.filter(attr => attr !== e.target.value)
-        } else {
-            filteredArray = this.state.filteredAttributes.concat(e.target.value)
-        }
+        if(!e.target.checked)
+            filteredArray = this.state.filteredAttributes.filter(attr => attr !== e.target.value);
+        else
+            filteredArray = this.state.filteredAttributes.concat(e.target.value);
         this.setState(() => {
             return {
                 filteredAttributes: filteredArray
@@ -33,7 +30,6 @@ class Heroes extends Component {
             mode: "cors"
         };
         fetch(`${REQ_URL}/api/heroStats`, REQ_OPTIONS).then(res => res.json()).then(data => {
-            console.log(data);
             this.setState((prevState, props) => {
                 return {heroesList: data}
             });
@@ -41,23 +37,28 @@ class Heroes extends Component {
         })
     };
     appendHeroList = () => {
-        return this.state.heroesList.map(hero => {
-            return (
-                <HeroCard
-                    key = {hero.id}
-                    id = {hero.id}
-                    avatarURL = {`https://api.opendota.com${hero.img}`}
-                    name = {hero.localized_name}
-                    str = {hero.base_str}
-                    agi = {hero.base_agi}
-                    int = {hero.base_int}
-                    mainAttr = {hero.primary_attr}
-                />
-            )
+        return this.state.heroesList
+            .map(hero => {
+                if(this.state.filteredAttributes.indexOf(hero.primary_attr) > -1) {
+                    return (
+                        <HeroCard
+                            key = {hero.id}
+                            id = {hero.id}
+                            avatarURL = {`https://api.opendota.com${hero.img}`}
+                            name = {hero.localized_name}
+                            str = {hero.base_str}
+                            agi = {hero.base_agi}
+                            int = {hero.base_int}
+                            mainAttr = {hero.primary_attr}
+                        />
+                    )
+                }
+
         })
     };
     render() {
         const attrs = ['str', 'agi', 'int'];
+        const heroList = this.appendHeroList();
         const checkBoxes = attrs.map(attribute => {
             return (
                 <label>
@@ -77,7 +78,7 @@ class Heroes extends Component {
                     </form>
                     <input id="heroSearch" type="text"/>
                 </div>
-                {this.appendHeroList()}
+                {heroList}
             </div>
         )
     }
