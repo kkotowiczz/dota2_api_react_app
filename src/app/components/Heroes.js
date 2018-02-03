@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import HeroCard from './HeroCard';
 import Checkbox from './Checkbox';
+import SearchBar from './SearchBar'
 
 class Heroes extends Component {
     state = {
@@ -33,7 +34,6 @@ class Heroes extends Component {
             this.setState((prevState, props) => {
                 return {heroesList: data}
             });
-
         })
     };
     appendHeroList = () => {
