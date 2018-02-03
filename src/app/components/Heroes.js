@@ -31,6 +31,10 @@ class Heroes extends Component {
             this.setState(() => {
                 return {searchedTerm: searchTerm}
             })
+        } if(!searchTerm) {
+            this.setState(() => {
+                return{searchedTerm: ''}
+            })
         }
     };
 
@@ -49,7 +53,7 @@ class Heroes extends Component {
     appendHeroList = () => {
         return this.state.heroesList
             .map(hero => {
-                if(this.state.filteredAttributes.indexOf(hero.primary_attr) > -1 && hero.localized_name.indexOf(this.state.searchedTerm) > -1) {
+                if(this.state.filteredAttributes.indexOf(hero.primary_attr) > -1 && hero.localized_name.toLowerCase().indexOf(this.state.searchedTerm.toLowerCase()) > -1) {
                     return (
                         <HeroCard
                             key = {hero.id}
