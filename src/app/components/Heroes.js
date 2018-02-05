@@ -7,7 +7,8 @@ class Heroes extends Component {
     state = {
         heroesList: [],
         filteredAttributes: ['str', 'agi', 'int'],
-        searchedTerm: ''
+        searchedTerm: '',
+        selectOptions: []
     };
     componentDidMount() {
         this.fetchData();
@@ -39,6 +40,7 @@ class Heroes extends Component {
     };
 
     fetchData = () => {
+        const selectOptionsArray = [];
         const REQ_URL = `https://api.opendota.com`;
         const REQ_OPTIONS = {
             method: "GET",
@@ -48,12 +50,23 @@ class Heroes extends Component {
             this.setState((prevState, props) => {
                 return {heroesList: data}
             });
+            data.map(hero => hero.roles.map(role => {
+                if (selectOptionsArray.indexOf(role) === -1) {
+                    selectOptionsArray.push(role)
+                }
+            }));
+            this.setState(() => {
+                return {selectOptions: selectOptionsArray}
+            });
+            console.log(this.state.selectOptions)
         })
     };
+
     appendHeroList = () => {
+        let searchTerm = this.state.searchedTerm.toLowerCase();
         return this.state.heroesList
             .map(hero => {
-                if(this.state.filteredAttributes.indexOf(hero.primary_attr) > -1 && hero.localized_name.toLowerCase().indexOf(this.state.searchedTerm.toLowerCase()) > -1) {
+                if(this.state.filteredAttributes.indexOf(hero.primary_attr) > -1 && hero.localized_name.toLowerCase().indexOf(searchTerm) > -1) {
                     return (
                         <HeroCard
                             key = {hero.id}
@@ -89,6 +102,9 @@ class Heroes extends Component {
                     <form id="attributeSelector">
                         {checkBoxes}
                     </form>
+                    <select>
+                        {this.state.selectOptions.map(option => <option value={option}>{option}</option>)}
+                    </select>
                     <SearchBar
                         searchBarChangeHandler={this.searchBarChangeHandler}
                     />

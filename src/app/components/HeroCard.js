@@ -26,7 +26,7 @@ class HeroCard extends Component {
                         kdaStats: {res}
                     }
                 })
-            }).then(s => console.log(this.state.kdaStats))
+            })
     };
     render() {
         return (

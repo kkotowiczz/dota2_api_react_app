@@ -47,6 +47,7 @@ body {
     flex-shrink: 1;
     min-width: 256px;
     margin: 25px;
+    max-width: 500px;
 }
 .avatarImg{
     min-width: 100%;
