@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import HeroCard from './HeroCard';
-import Checkbox from './Checkbox';
+
 import SearchBar from './SearchBar'
+import HeroFilters from './HeroFilters'
 
 class Heroes extends Component {
     state = {
@@ -61,7 +62,6 @@ class Heroes extends Component {
             console.log(this.state.selectOptions)
         })
     };
-
     appendHeroList = () => {
         let searchTerm = this.state.searchedTerm.toLowerCase();
         return this.state.heroesList
@@ -83,31 +83,17 @@ class Heroes extends Component {
             })
         };
     render() {
-        const attrs = ['Strength', 'Agility', 'Intelligence'];
         const heroList = this.appendHeroList();
-        const checkBoxes = attrs.map(attribute => {
-            return (
-                <label>
-                    <Checkbox
-                        attrName={attribute}
-                        key={attribute}
-                        clickHandler={this.clickHandler}
-                    />
-                </label>
-            )
-        });
         return(
             <div id="heroesWrapper">
                 <div id="heroFilter">
-                    <form id="attributeSelector">
-                        {checkBoxes}
+                    <form id="attributeSelectorWrapper">
+                        <HeroFilters
+                            clickHandler={this.clickHandler}
+                            options={this.state.selectOptions}
+                        />
                     </form>
-                    <select>
-                        {this.state.selectOptions.map(option => <option value={option}>{option}</option>)}
-                    </select>
-                    <SearchBar
-                        searchBarChangeHandler={this.searchBarChangeHandler}
-                    />
+                    <SearchBar searchBarChangeHandler={this.searchBarChangeHandler}/>
                 </div>
                 {heroList}
             </div>
