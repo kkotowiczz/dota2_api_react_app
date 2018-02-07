@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import Checkbox from './Checkbox';
-import SearchBar from './SearchBar';
-
 
 class HeroFilters extends Component {
     render() {
@@ -18,12 +16,13 @@ class HeroFilters extends Component {
             )
         });
         return (
-                <div id="attributeSelector">
-                    {checkBoxes}
-                    <select>
-                        {this.props.options.map(option => <option value={option}>{option}</option>)}
-                    </select>
-                </div>
+            <div id="attributeSelector">
+                {checkBoxes}
+                <select onChange={this.props.handleRoleChange}>
+                    <option defaultValue value="">All roles</option>
+                    {this.props.roles.map(role => <option value={role}>{role}</option>)}
+                </select>
+            </div>
         )
     }
 }

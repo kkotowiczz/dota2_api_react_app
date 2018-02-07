@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import HeroCard from './HeroCard';
-
 import SearchBar from './SearchBar'
 import HeroFilters from './HeroFilters'
 
@@ -9,7 +8,8 @@ class Heroes extends Component {
         heroesList: [],
         filteredAttributes: ['str', 'agi', 'int'],
         searchedTerm: '',
-        selectOptions: []
+        selectOptions: [],
+        chosenRole: ''
     };
     componentDidMount() {
         this.fetchData();
@@ -35,11 +35,15 @@ class Heroes extends Component {
             })
         } if(!searchTerm) {
             this.setState(() => {
-                return{searchedTerm: ''}
+                return {searchedTerm: ''}
             })
         }
     };
-
+    handleRoleChange = e => {
+        const chosenRole = e.target.value;
+        const roleFilterArray = this.state.heroesList.filter(hero => hero.roles.some(role => role === chosenRole));
+        console.log(roleFilterArray)
+    };
     fetchData = () => {
         const selectOptionsArray = [];
         const REQ_URL = `https://api.opendota.com`;
@@ -90,7 +94,8 @@ class Heroes extends Component {
                     <form id="attributeSelectorWrapper">
                         <HeroFilters
                             clickHandler={this.clickHandler}
-                            options={this.state.selectOptions}
+                            roles={this.state.selectOptions}
+                            handleRoleChange={this.handleRoleChange}
                         />
                     </form>
                     <SearchBar searchBarChangeHandler={this.searchBarChangeHandler}/>
