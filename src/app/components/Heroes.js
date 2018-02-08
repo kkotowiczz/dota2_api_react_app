@@ -100,6 +100,7 @@ class Heroes extends Component {
                     </form>
                     <SearchBar searchBarChangeHandler={this.searchBarChangeHandler}/>
                 </div>
+
                 {heroList}
             </div>
         )

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Checkbox from './Checkbox';
+import RoleSelector from './RoleSelector'
 
 class HeroFilters extends Component {
     render() {
@@ -22,6 +23,7 @@ class HeroFilters extends Component {
                     <option defaultValue value="">All roles</option>
                     {this.props.roles.map(role => <option value={role}>{role}</option>)}
                 </select>
+                <RoleSelector/>
             </div>
         )
     }
