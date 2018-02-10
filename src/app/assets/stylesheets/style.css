@@ -34,9 +34,9 @@ body {
     justify-content: space-around;
     flex-direction: row;
 }
-#attributeSelectorWrapper, #heroSearchWrapper {
+#attributeSelectorWrapper, #heroSearchWrapper, #rolesFilterWrapper {
     display: flex;
-    width: 50%;
+    width: 33%;
     margin: 15px;
 }
 #attributeSelectorWrapper {
@@ -55,6 +55,11 @@ body {
 #heroSearch {
     height: 100%;
     width: 100%;
+}
+#rolesFilterWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .heroCard {
     padding-top: 25px;

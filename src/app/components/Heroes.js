@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import HeroCard from './HeroCard';
 import SearchBar from './SearchBar'
 import HeroFilters from './HeroFilters'
+import RolesFilterDropdown from './RolesFilterDropdown'
 
 class Heroes extends Component {
     state = {
@@ -93,7 +94,9 @@ class Heroes extends Component {
                             handleRoleChange={this.handleRoleChange}
                         />
                     </form>
+                    <RolesFilterDropdown/>
                     <SearchBar searchBarChangeHandler={this.searchBarChangeHandler}/>
+
                 </div>
 
                 {heroList}
