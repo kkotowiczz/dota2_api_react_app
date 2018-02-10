@@ -9,7 +9,6 @@ class Heroes extends Component {
         filteredAttributes: ['str', 'agi', 'int'],
         searchedTerm: '',
         selectOptions: [],
-        chosenRole: ''
     };
     componentDidMount() {
         this.fetchData();
@@ -39,11 +38,7 @@ class Heroes extends Component {
             })
         }
     };
-    handleRoleChange = e => {
-        const chosenRole = e.target.value;
-        const roleFilterArray = this.state.heroesList.filter(hero => hero.roles.some(role => role === chosenRole));
-        console.log(roleFilterArray)
-    };
+
     fetchData = () => {
         const selectOptionsArray = [];
         const REQ_URL = `https://api.opendota.com`;

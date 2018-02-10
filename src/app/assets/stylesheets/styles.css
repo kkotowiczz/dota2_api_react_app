@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+#app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#heroesWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+}
+#nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 10%;
+}
+#heroFilterWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+#heroFilter {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+#attributeSelectorWrapper, #heroSearchWrapper {
+    display: flex;
+    width: 50%;
+    margin: 15px;
+}
+#attributeSelectorWrapper {
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+#attributeSelector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+}
+#heroSearch {
+    height: 100%;
+    width: 100%;
+}
+.heroCard {
+    padding-top: 25px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 256px;
+    margin: 25px;
+    max-width: 415px;
+}
+.avatarImg{
+    min-width: 100%;
+}
+
+@media screen and (min-width: 301px) and (max-width: 700px) {
+    .heroCard {
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 300px) {
+    .heroCard {
+        min-width: 100%;
+    }
+}
+.attributesRow {
+    margin: 0px;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+}
+.prim {
+    background-color: cadetblue;
+}
+#chart {
+    height:100%;
+    width: 100%;
+}
+.fill {
+
+}
+.cardBack {
+    width: 100%;
+    height: 100%;
+}
