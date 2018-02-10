@@ -90,15 +90,12 @@ class Heroes extends Component {
                     <form id="attributeSelectorWrapper">
                         <HeroFilters
                             clickHandler={this.clickHandler}
-                            roles={this.state.selectOptions}
                             handleRoleChange={this.handleRoleChange}
                         />
                     </form>
-                    <RolesFilterDropdown/>
                     <SearchBar searchBarChangeHandler={this.searchBarChangeHandler}/>
-
                 </div>
-
+                <RolesFilterDropdown roles={this.state.selectOptions}/>
                 {heroList}
             </div>
         )
