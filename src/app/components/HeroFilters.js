@@ -9,9 +9,10 @@ class HeroFilters extends Component {
             return (
                 <label>
                     <Checkbox
-                        attrName={attribute}
+                        fieldName={attribute}
                         key={attribute}
                         clickHandler={this.props.clickHandler}
+                        rolesCheckboxes={false}
                     />
                 </label>
             )

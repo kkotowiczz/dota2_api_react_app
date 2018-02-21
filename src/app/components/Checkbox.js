@@ -10,20 +10,21 @@ class Checkbox extends Component {
         });
     };
     render() {
-        return (
-            <div>
-                {this.props.attrName}
-                <input
-                    type="checkbox"
-                    name="attr"
-                    value={this.props.attrName}
-                    onClick={this.props.clickHandler}
-                    onChange={this.handleCheckBoxClick}
-                    checked={this.state.checked}
-                />
-            </div>
-        )
+            return (
+                <div>
+                    {this.props.fieldName }
+                    <input
+                        type="checkbox"
+                        name={this.props.rolesCheckboxes ? "roles" : "attr"}
+                        value={this.props.fieldName}
+                        onClick={this.props.clickHandler}
+                        onChange={this.handleCheckBoxClick}
+                        checked={this.state.checked}
+                    />
+                </div>
+            )
+        }
     }
-}
+
 
 export default Checkbox
