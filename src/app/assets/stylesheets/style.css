@@ -20,7 +20,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 10%;
 }
 #heroFilterWrapper {
     width: 100%;
