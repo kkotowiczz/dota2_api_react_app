@@ -12,12 +12,12 @@ class Checkbox extends Component {
     render() {
             return (
                 <div>
-                    {this.props.fieldName }
+                    {this.props.fieldName}
                     <input
                         type="checkbox"
                         name={this.props.rolesCheckboxes ? "roles" : "attr"}
                         value={this.props.fieldName}
-                        onClick={this.props.clickHandler}
+                        onClick={this.props.rolesCheckboxes ? this.props.roleFilter : this.props.clickHandler}
                         onChange={this.handleCheckBoxClick}
                         checked={this.state.checked}
                     />

@@ -19,7 +19,8 @@ class RolesFilterDropdown extends Component {
                             <Checkbox
                                 fieldName={role}
                                 key={role}
-                                roleCheckboxes={true}
+                                rolesCheckboxes={true}
+                                roleFilter={this.props.roleFilter}
                             >
                             </Checkbox>)
                         })}

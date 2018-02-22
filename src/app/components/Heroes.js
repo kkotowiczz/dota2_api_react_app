@@ -39,6 +39,9 @@ class Heroes extends Component {
             })
         }
     };
+    roleFilter = e => {
+       
+    }
 
     fetchData = () => {
         const selectOptionsArray = [];
@@ -88,14 +91,11 @@ class Heroes extends Component {
             <div id="heroesWrapper">
                 <div id="heroFilter">
                     <form id="attributeSelectorWrapper">
-                        <HeroFilters
-                            clickHandler={this.clickHandler}
-                            handleRoleChange={this.handleRoleChange}
-                        />
+                        <HeroFilters clickHandler={this.clickHandler} />
                     </form>
-                    <SearchBar searchBarChangeHandler={this.searchBarChangeHandler}/>
+                    <SearchBar searchBarChangeHandler={this.searchBarChangeHandler} />
                 </div>
-                <RolesFilterDropdown roles={this.state.selectOptions}/>
+                <RolesFilterDropdown roles={this.state.selectOptions} roleFilter={this.roleFilter} />
                 {heroList}
             </div>
         )
