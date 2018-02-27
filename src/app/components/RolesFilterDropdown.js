@@ -3,7 +3,8 @@ import FaAngleRight from 'react-icons/lib/fa/angle-right'
 import Checkbox from './Checkbox'
 class RolesFilterDropdown extends Component {
     state = {
-        isDropdownActive: false
+        isDropdownActive: false,
+        rolesList: ["Carry", "Escape", "Nuker", "Initiator", "Durable", "Disabler", "Jungler", "Support", "Pusher"]
     };
     handleWrapperClick = () => {
         this.setState(() => {
@@ -14,15 +15,14 @@ class RolesFilterDropdown extends Component {
         return (
             <div id="dropdown">Roles<FaAngleRight onClick={this.handleWrapperClick}/>
                     <div id="rolesFilterWrapper">
-                        { this.state.isDropdownActive && this.props.roles.map(role => {
+                        { this.state.isDropdownActive && this.state.rolesList.map(role => {
                             return (
                             <Checkbox
                                 fieldName={role}
                                 key={role}
                                 rolesCheckboxes={true}
                                 roleFilter={this.props.roleFilter}
-                            >
-                            </Checkbox>)
+                            />)
                         })}
                     </div>
                 </div>

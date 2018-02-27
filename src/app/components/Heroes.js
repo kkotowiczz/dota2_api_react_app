@@ -11,19 +11,19 @@ class Heroes extends Component {
         searchedTerm: '',
         selectOptions: [],
     };
-    componentDidMount() {
+    componentWillMount() {
         this.fetchData();
     };
     clickHandler = e => {
         const abbrAttr = e.target.value.substr(0, 3).toLowerCase();
-        let filteredArray;
+        let filteredAttrArray;
         if(!e.target.checked)
-            filteredArray = this.state.filteredAttributes.filter(attr => attr !== abbrAttr);
+            filteredAttrArray = this.state.filteredAttributes.filter(attr => attr !== abbrAttr);
         else
-            filteredArray = this.state.filteredAttributes.concat(abbrAttr);
+            filteredAttrArray = this.state.filteredAttributes.concat(abbrAttr);
         this.setState(() => {
             return {
-                filteredAttributes: filteredArray
+                filteredAttributes: filteredAttrArray
             }
         })
     };
@@ -40,7 +40,14 @@ class Heroes extends Component {
         }
     };
     roleFilter = e => {
-       
+       let filteredRolesArr;
+       if(!e.target.checked)
+           filteredRolesArr = this.state.selectOptions.filter(role => role !== e.target.value)
+        else
+            filteredRolesArr = this.state.selectOptions.concat(e.target.value);
+       this.setState(() => {
+           return {selectOptions: filteredRolesArr}
+       })
     }
 
     fetchData = () => {
@@ -55,9 +62,8 @@ class Heroes extends Component {
                 return {heroesList: data}
             });
             data.map(hero => hero.roles.map(role => {
-                if (selectOptionsArray.indexOf(role) === -1) {
+                if (selectOptionsArray.indexOf(role) === -1)
                     selectOptionsArray.push(role)
-                }
             }));
             this.setState(() => {
                 return {selectOptions: selectOptionsArray}
@@ -67,9 +73,10 @@ class Heroes extends Component {
     };
     appendHeroList = () => {
         let searchTerm = this.state.searchedTerm.toLowerCase();
+        const {filteredAttributes, selectOptions} = this.state;
         return this.state.heroesList
             .map(hero => {
-                if(this.state.filteredAttributes.indexOf(hero.primary_attr) > -1 && hero.localized_name.toLowerCase().indexOf(searchTerm) > -1) {
+                if(filteredAttributes.indexOf(hero.primary_attr) > -1 && hero.localized_name.toLowerCase().indexOf(searchTerm) > -1 && hero.roles.every(role => selectOptions.indexOf(role) > -1)) {
                     return (
                         <HeroCard
                             key = {hero.id}
@@ -95,7 +102,7 @@ class Heroes extends Component {
                     </form>
                     <SearchBar searchBarChangeHandler={this.searchBarChangeHandler} />
                 </div>
-                <RolesFilterDropdown roles={this.state.selectOptions} roleFilter={this.roleFilter} />
+                <RolesFilterDropdown roleFilter={this.roleFilter} />
                 {heroList}
             </div>
         )
