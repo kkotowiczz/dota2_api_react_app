@@ -17,7 +17,7 @@ class Checkbox extends Component {
                         type="checkbox"
                         name={this.props.rolesCheckboxes ? "roles" : "attr"}
                         value={this.props.fieldName}
-                        onClick={this.props.rolesCheckboxes ? this.props.roleFilter : this.props.clickHandler}
+                        onClick={this.props.clickHandler}
                         onChange={this.handleCheckBoxClick}
                         checked={this.state.checked}
                     />

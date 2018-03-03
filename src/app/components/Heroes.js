@@ -14,16 +14,17 @@ class Heroes extends Component {
     componentWillMount() {
         this.fetchData();
     };
-    clickHandler = e => {
-        const abbrAttr = e.target.value.substr(0, 3).toLowerCase();
-        let filteredAttrArray;
+    clickHandler = (type, e) => {
+        const checkboxValue = type === 'attr' ? e.target.value.substr(0, 3).toLowerCase() : e.target.value;
+        let filteredArray;
+        const arrayToFilter = type === 'attr' ? 'filteredAttributes' : 'selectOptions';
         if(!e.target.checked)
-            filteredAttrArray = this.state.filteredAttributes.filter(attr => attr !== abbrAttr);
+            filteredArray = this.state[arrayToFilter].filter(val => val !== checkboxValue);
         else
-            filteredAttrArray = this.state.filteredAttributes.concat(abbrAttr);
+            filteredArray = this.state[arrayToFilter].concat(checkboxValue);
         this.setState(() => {
             return {
-                filteredAttributes: filteredAttrArray
+                [arrayToFilter]: filteredArray
             }
         })
     };
@@ -39,16 +40,6 @@ class Heroes extends Component {
             })
         }
     };
-    roleFilter = e => {
-       let filteredRolesArr;
-       if(!e.target.checked)
-           filteredRolesArr = this.state.selectOptions.filter(role => role !== e.target.value)
-        else
-            filteredRolesArr = this.state.selectOptions.concat(e.target.value);
-       this.setState(() => {
-           return {selectOptions: filteredRolesArr}
-       })
-    }
 
     fetchData = () => {
         const selectOptionsArray = [];
@@ -98,11 +89,11 @@ class Heroes extends Component {
             <div id="heroesWrapper">
                 <div id="heroFilter">
                     <form id="attributeSelectorWrapper">
-                        <HeroFilters clickHandler={this.clickHandler} />
+                        <HeroFilters clickHandler={e => this.clickHandler('attr', e)} />
                     </form>
                     <SearchBar searchBarChangeHandler={this.searchBarChangeHandler} />
                 </div>
-                <RolesFilterDropdown roleFilter={this.roleFilter} />
+                <RolesFilterDropdown clickHandler={e => this.clickHandler('role', e)} />
                 {heroList}
             </div>
         )

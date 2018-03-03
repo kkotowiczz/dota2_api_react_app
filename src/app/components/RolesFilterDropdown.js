@@ -10,7 +10,7 @@ class RolesFilterDropdown extends Component {
         this.setState(() => {
             return {isDropdownActive: !this.state.isDropdownActive}
         })
-    }
+    };
     render() {
         return (
             <div id="dropdown">Roles<FaAngleRight onClick={this.handleWrapperClick}/>
@@ -21,7 +21,7 @@ class RolesFilterDropdown extends Component {
                                 fieldName={role}
                                 key={role}
                                 rolesCheckboxes={true}
-                                roleFilter={this.props.roleFilter}
+                                clickHandler={this.props.clickHandler}
                             />)
                         })}
                     </div>
